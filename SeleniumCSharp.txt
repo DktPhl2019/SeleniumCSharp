@@ -1,0 +1,50 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System.IO;
+
+namespace UnitTestProject1
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        static void Main(string[] args)
+        {
+
+            string fileName = @"C:\test\SeleniumCSharpChrome.txt";
+            
+            IWebDriver driver = new ChromeDriver();
+
+            using (StreamWriter sw = File.CreateText(fileName))
+            {
+                sw.WriteLine("New text file created: " + DateTime.Now.ToLocalTime());
+                driver.Navigate().GoToUrl("https://www.ultimateqa.com/automation/");
+                sw.WriteLine("Navigate to https://www.ultimateqa.com/automation/: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.Name("s")).SendKeys("test");
+                sw.WriteLine("Type test:" + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.Id("searchsubmit")).Click();
+                sw.WriteLine("Click Search: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.LinkText("Complete List of Awesome Websites to Practice Automation Testing")).Click();
+                sw.WriteLine("Click Link: " + DateTime.Now.ToLocalTime());
+                driver.Navigate().Back();
+                sw.WriteLine("Hit Back: " + DateTime.Now.ToLocalTime());
+                driver.Navigate().Back();
+                sw.WriteLine("Hit Back: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.Id("et_top_search")).Click();
+                sw.WriteLine("Click Search: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.ClassName("et-search-field")).Clear();
+                sw.WriteLine("Clear Entry: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.ClassName("et-search-field")).SendKeys("Test100");
+                sw.WriteLine("Type Test100: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.ClassName("et-search-field")).Submit();
+                sw.WriteLine("Click Search: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.LinkText("Automation Exercises")).Click();
+                sw.WriteLine("Click Link Automation Excercises: " + DateTime.Now.ToLocalTime());
+                driver.FindElement(By.LinkText("Big page with many elements")).Click();
+                sw.WriteLine("Click link Big page with many elements: " + DateTime.Now.ToLocalTime());
+            }
+        }
+    }
+}
