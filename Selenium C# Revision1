@@ -14,7 +14,6 @@ using System;
 
 namespace Selenium_C_Sharp_NUNIT
 {
-
         public class InitialSetup
     {
         public static IWebDriver driver = new ChromeDriver();
@@ -23,7 +22,6 @@ namespace Selenium_C_Sharp_NUNIT
     
     public class Test100:InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -106,7 +104,6 @@ namespace Selenium_C_Sharp_NUNIT
 
     public class Test101 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
