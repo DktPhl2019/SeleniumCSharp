@@ -15,7 +15,6 @@ using System;
 namespace Selenium_C_Sharp_NUNIT
 {
 
-
         public class InitialSetup
     {
         public static IWebDriver driver = new ChromeDriver();
@@ -102,7 +101,6 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The sum expected: " + sum1);
                 Console.WriteLine("The sum calculated: " + output2.Text);
             }
-
         }
     }
 
@@ -236,12 +234,10 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs);
 
         }
-
     }
 
     public class Test102 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -250,7 +246,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method1()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -286,12 +281,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + out1);
                 Console.WriteLine("The output shown: " + checkmessage.Text);
             }
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String out2 = "Radio button 'Female' is checked";
@@ -316,12 +309,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + out2);
                 Console.WriteLine("The output shown: " + checkmessage.Text);
             }
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -355,12 +346,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc3);
                 Console.WriteLine("The output shown: " + checkmessage2.Text);
             }
-
         }
 
         [Test]
         public static void method4()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -394,12 +383,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc4);
                 Console.WriteLine("The output shown: " + checkmessage2.Text);
             }
-
         }
 
         [Test]
         public static void method5()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -433,12 +420,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc5);
                 Console.WriteLine("The output shown: " + checkmessage2.Text);
             }
-
         }
 
         [Test]
         public static void method6()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -472,12 +457,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc3);
                 Console.WriteLine("The output shown: " + checkmessage2.Text);
             }
-
         }
 
         [Test]
         public static void method7()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -511,12 +494,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc4);
                 Console.WriteLine("The output shown: " + checkmessage2.Text);
             }
-
         }
 
         [Test]
         public static void method8()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String abc1 = "Sex : Male";
@@ -554,14 +535,11 @@ namespace Selenium_C_Sharp_NUNIT
             //return from Radio Buttons Demo to Main Page
             driver.Navigate().Back();
             System.Threading.Thread.Sleep(mysecs);
-
         }
-
     }
 
     public class Test103 : InitialSetup
     {
-       
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -601,12 +579,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + expm1);
                 Console.WriteLine("The output shown: " + checkmessage3.Text);
             }
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String state1 = "California";
@@ -657,12 +633,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + frstoutstate1);
                 Console.WriteLine("The output shown: " + checkmsg1.Text);
             }
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String state1 = "California";
@@ -710,12 +684,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + optoutstate1);
                 Console.WriteLine("The output shown: " + checkmsg1.Text);
             }
-
         }
 
         [Test]
         public static void method4()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String state1 = "California";
@@ -768,12 +740,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + frstoutstate1);
                 Console.WriteLine("The output shown: " + checkmsg1.Text);
             }
-
         }
 
         [Test]
         public static void method5()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String state1 = "California";
@@ -825,13 +795,11 @@ namespace Selenium_C_Sharp_NUNIT
             //return from Select Dropdown List to Main Page
             driver.Navigate().Back();
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
 
     public class Test104 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -840,7 +808,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             //Open Input Form Submit
@@ -889,7 +856,6 @@ namespace Selenium_C_Sharp_NUNIT
 
     public class Test105 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -898,7 +864,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -935,13 +900,11 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + expsubmittext);
                 Console.WriteLine("The output shown: " + mysubmittext.Text);
             }
-
         }
     }
 
     public class Test106 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -950,7 +913,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1018,13 +980,11 @@ namespace Selenium_C_Sharp_NUNIT
             Selectfile.SendKeys(Keys.Down);
             System.Threading.Thread.Sleep(mysecs);
             Selectfile.SendKeys(Keys.Enter);
-
         }
     }
 
     public class Test107 : InitialSetup
     {
-       
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1033,7 +993,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1068,14 +1027,11 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("//input[contains(@placeholder,'End date')]")).Click();
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("(//td[contains(.,'20')])[1]")).Click();
-
         }
-
     }
 
     public class Test108 : InitialSetup
     {
-       
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1084,7 +1040,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1103,13 +1058,11 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("//input[contains(@name,'to')]")).Click();
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("//a[contains(.,'24')]")).Click();
-
         }
     }
 
     public class Test109 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1118,7 +1071,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1150,7 +1102,6 @@ namespace Selenium_C_Sharp_NUNIT
 
     public class Test110 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1159,7 +1110,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method1()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1187,7 +1137,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox1.Text, Does.Contain(mytest1), "'{0}' does not contain '{1}'", OutBox1.Text, mytest1);
 
-
             if (OutBox1.Text.Contains(mytest1))
             {
                 Console.WriteLine("The output expected: " + mytest1);
@@ -1200,12 +1149,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox1.Clear();
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             IWebElement InputBox1 = driver.FindElement(By.XPath("//input[contains(@data-action,'filter')]"));
@@ -1231,12 +1178,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox1.Clear();
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             IWebElement InputBox1 = driver.FindElement(By.XPath("//input[contains(@data-action,'filter')]"));
@@ -1264,12 +1209,10 @@ namespace Selenium_C_Sharp_NUNIT
             InputBox1.Clear();
             System.Threading.Thread.Sleep(mysecs);
             InputBox1.SendKeys(Keys.Enter);
-
         }
 
         [Test]
         public static void method4()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("//button[contains(.,'Filter')]")).Click();
@@ -1303,15 +1246,12 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox11.Clear();
-
         }
 
         [Test]
         public static void method5()
-
         {
             System.Threading.Thread.Sleep(mysecs);
-
             String mytest4 = "3";
             String mytest5 = "jacobs";
             String mytest6 = "Byron";
@@ -1341,12 +1281,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox12.Clear();
-
         }
 
         [Test]
         public static void method6()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String mytest4 = "3";
@@ -1378,12 +1316,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox13.Clear();
-
         }
 
         [Test]
         public static void method7()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String mytest4 = "3";
@@ -1416,13 +1352,11 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             InputBox14.Clear();
-
         }
     }
 
     public class Test111 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1431,7 +1365,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1496,13 +1429,11 @@ namespace Selenium_C_Sharp_NUNIT
             Console.WriteLine("check5 orange should be shown: " + check5.Displayed);
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
 
     public class Test112 : InitialSetup
     {
-       
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1511,7 +1442,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method1()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1547,12 +1477,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String mymessage2 = "Showing 1 to 25 of 32 entries";
@@ -1574,14 +1502,11 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + mymessage2);
                 Console.WriteLine("The output shown: " + mymessagebox.Text);
             }
-
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String mymessage3 = "Showing 1 to 10 of 32 entries";
@@ -1696,12 +1621,10 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("//th[contains(.,'Salary')]")).Click();
         }
-
     }
 
     public class Test113 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1710,7 +1633,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             //Open Table Data Download
@@ -1723,8 +1645,7 @@ namespace Selenium_C_Sharp_NUNIT
     }
 
     public class Test114 : InitialSetup
-    {
-        
+    { 
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1733,7 +1654,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1749,13 +1669,11 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("//button[contains(.,'Start Download')]")).Click();
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("(//button[contains(@type,'button')])[3]")).Click();
-
         }
     }
 
     public class Test115 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1764,7 +1682,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1793,13 +1710,11 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + "100%");
                 Console.WriteLine("The output shown: " + OneHundredPercnt.Text);
             }
-
         }
     }
 
     public class Test116 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1808,7 +1723,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1879,13 +1793,11 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs);
             redslider.MoveToElement(redbar).ClickAndHold().MoveByOffset(numberredbar2, 0).Release().Perform();
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
 
     public class Test117 : InitialSetup
     {
-       
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -1894,7 +1806,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method1()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -1932,12 +1843,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -1967,12 +1876,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2003,12 +1910,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method4()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2039,12 +1944,10 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs);
 
             driver.FindElement(By.XPath("(//button[@type='button'][contains(.,'×')])[2]")).Click();
-
         }
 
         [Test]
         public static void method5()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2074,12 +1977,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method6()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2109,12 +2010,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method7()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2148,12 +2047,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method8()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             String m1 = "I'm an autocloseable success message. I will hide in 5 seconds.";
@@ -2187,14 +2084,11 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("(//button[@type='button'][contains(.,'×')])[4]")).Click();
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("(//button[@type='button'][contains(.,'×')])[1]")).Click();
-
         }
-
     }
 
     public class Test118 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2203,7 +2097,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2241,13 +2134,11 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("//a[@href='#myModal']")).Click();
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("(//a[@href='#'][contains(.,'Save changes')])[2]")).Click();
-
         }
     }
 
     public class Test119 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2256,7 +2147,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2320,13 +2210,11 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             driver.SwitchTo().Window(current);
-
         }
     }
 
     public class Test120 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2335,7 +2223,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2353,13 +2240,11 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs * 2);
             driver.FindElement(By.XPath("(//button[@type='button'])[4]")).Click();
             System.Threading.Thread.Sleep(mysecs * 2);
-
         }
     }
 
     public class Test121 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2368,7 +2253,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method1()
-
         {
             myMethod();
             //Open Javascript Alerts
@@ -2418,12 +2302,10 @@ namespace Selenium_C_Sharp_NUNIT
             }
 
             System.Threading.Thread.Sleep(mysecs);
-
         }
 
         [Test]
         public static void method2()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("(//button[contains(@class,'btn btn-default btn-lg')])[1]")).Click();
@@ -2448,12 +2330,10 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + m12);
                 Console.WriteLine("The output shown: " + alert2accept.Text);
             }
-
         }
 
         [Test]
         public static void method3()
-
         {
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.XPath("//button[@class='btn btn-default btn-lg'][contains(.,'Click for Prompt Box')]")).Click();
@@ -2491,13 +2371,11 @@ namespace Selenium_C_Sharp_NUNIT
                 Console.WriteLine("The output expected: " + m15);
                 Console.WriteLine("The output shown: " + popuptext.Text);
             }
-
         }
     }
 
     public class Test122 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2533,13 +2411,11 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement downloadfile = driver.FindElement(By.XPath("(//a[contains(.,'Download')])[7]"));
             downloadfile.Click();
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
 
     public class Test123 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2548,7 +2424,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2651,13 +2526,11 @@ namespace Selenium_C_Sharp_NUNIT
             elementrightselectall.Click();
             elementmovetoleft.Click();
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
 
     public class Test124 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2666,7 +2539,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2745,13 +2617,11 @@ namespace Selenium_C_Sharp_NUNIT
             addallbutton.Click();
             System.Threading.Thread.Sleep(mysecs);
             removeallbutton.Click();
-
         }
     }
 
     public class Test125 : InitialSetup
     {
-        
         public static void myMethod()
         {
             driver.Navigate().GoToUrl("https://demo.seleniumeasy.com/");
@@ -2760,7 +2630,6 @@ namespace Selenium_C_Sharp_NUNIT
 
         [Test]
         public static void method()
-
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
@@ -2792,8 +2661,6 @@ namespace Selenium_C_Sharp_NUNIT
             searchlist.Clear();
             searchlist.SendKeys(Keys.Enter);
             System.Threading.Thread.Sleep(mysecs);
-
         }
     }
-
 }
