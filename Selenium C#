@@ -31,6 +31,7 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             IWebElement popuptoclose = driver.FindElement(By.CssSelector(".at-cm-no-button"));
             popuptoclose.Click();
             System.Threading.Thread.Sleep(mysecs);
@@ -85,19 +86,6 @@ namespace Selenium_C_Sharp_NUNIT
             mybutton2.Click();//button click
             System.Threading.Thread.Sleep(mysecs);
             Assert.That(output2.Text, Does.Contain(msum1), "'{0}' does not contain '{1}'", output2.Text, msum1);// assert sum matches el1 and el2
-
-            if (output2.Text.Contains(msum1))
-            {
-                Console.WriteLine("The sum is correct");
-                Console.WriteLine("The sum expected: " + sum1);
-                Console.WriteLine("The sum calculated: " + output2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The sum is not correct");
-                Console.WriteLine("The sum expected: " + sum1);
-                Console.WriteLine("The sum calculated: " + output2.Text);
-            }
         }
     }
 
@@ -112,6 +100,7 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
             IWebElement InputForms2 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
@@ -124,21 +113,7 @@ namespace Selenium_C_Sharp_NUNIT
             //Verify expected text
             String input3 = "Success - Check box is checked";
             IWebElement output3 = driver.FindElement(By.Id("txtAge"));
-
             Assert.That(output3.Text, Does.Contain(input3), "'{0}' does not contain '{1}'", output3.Text, input3);
-
-            if (output3.Text.Contains(input3))
-            {
-                Console.WriteLine("Your Input text matched");
-                Console.WriteLine("The input expected: " + input3);
-                Console.WriteLine("The input shown: " + output3.Text);
-            }
-            else
-            {
-                Console.WriteLine("Your Input text did not match");
-                Console.WriteLine("The input expected: " + input3);
-                Console.WriteLine("The input shown: " + output3.Text);
-            }
         }
 
         [Test]
@@ -153,19 +128,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement output4 = driver.FindElement(By.Id("txtAge"));
 
             Assert.That(output4.Text, Does.Contain(input4), "'{0}' does not contain '{1}'", output4.Text, input4);
-
-            if (output4.Text.Contains(input4))
-            {
-                Console.WriteLine("Your Input text matched");
-                Console.WriteLine("The input expected: " + input4);
-                Console.WriteLine("The input shown: " + output4.Text);
-            }
-            else
-            {
-                Console.WriteLine("Your Input text did not match");
-                Console.WriteLine("The input expected: " + input4);
-                Console.WriteLine("The input shown: " + output4.Text);
-            }
 
             //4 checkboxes test
 
@@ -224,8 +186,7 @@ namespace Selenium_C_Sharp_NUNIT
             checkBox4.Click();
             Console.WriteLine("1st, 2nd, 3rd, and 4th checkbox deselected: ");
             Console.WriteLine("The button text: " + buttonchecktext.GetAttribute("value"));
-
-            //return from Checkbox Demo to Main Page
+            
             driver.Navigate().Back();
             System.Threading.Thread.Sleep(mysecs);
 
@@ -244,16 +205,15 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Radio Buttons Demo
-
+            
             IWebElement InputForms3 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms3.SendKeys(Keys.Down);
             System.Threading.Thread.Sleep(mysecs);
             driver.FindElement(By.LinkText("Radio Buttons Demo")).Click();
 
-            //Verify expected text for male checkbox
             String out1 = "Radio button 'Male' is checked";
 
             IWebElement radio1 = driver.FindElement(By.XPath("(//label[@class='radio-inline'][contains(.,'Male')])[1]"));
@@ -267,16 +227,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(checkmessage.Text, Does.Contain(out1), "'{0}' does not contain '{1}'", checkmessage.Text, out1);
 
-            if (checkmessage.Text.Contains(out1))
-            {
-                Console.WriteLine("The output expected: " + out1);
-                Console.WriteLine("The output shown: " + checkmessage.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + out1);
-                Console.WriteLine("The output shown: " + checkmessage.Text);
-            }
         }
 
         [Test]
@@ -293,18 +243,7 @@ namespace Selenium_C_Sharp_NUNIT
             System.Threading.Thread.Sleep(mysecs);
             checkbutton1.Click();
 
-            Assert.That(checkmessage.Text, Does.Contain(out2), "'{0}' does not contain '{1}'", checkmessage.Text, out2);
-
-            if (checkmessage.Text.Contains(out2))
-            {
-                Console.WriteLine("The output expected: " + out2);
-                Console.WriteLine("The output shown: " + checkmessage.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + out2);
-                Console.WriteLine("The output shown: " + checkmessage.Text);
-            }
+            Assert.That(checkmessage.Text, Does.Contain(out2), "'{0}' does not contain '{1}'", checkmessage.Text, out2);    
         }
 
         [Test]
@@ -331,17 +270,6 @@ namespace Selenium_C_Sharp_NUNIT
             checkbutton2.Click();
 
             Assert.That(checkmessage2.Text, Does.Contain(abc1) & Does.Contain(abc3), "'{0}' does not contain '{1}'", checkmessage2.Text, abc1, abc3);
-
-            if ((checkmessage2.Text.Contains(abc1)) && (checkmessage2.Text.Contains(abc3)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc3);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc3);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
         }
 
         [Test]
@@ -368,17 +296,6 @@ namespace Selenium_C_Sharp_NUNIT
             checkbutton2.Click();
 
             Assert.That(checkmessage2.Text, Does.Contain(abc1) & Does.Contain(abc4), "'{0}' does not contain '{1}'", checkmessage2.Text, abc1, abc4);
-
-            if ((checkmessage2.Text.Contains(abc1)) && (checkmessage2.Text.Contains(abc4)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc4);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc4);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
         }
 
         [Test]
@@ -405,17 +322,6 @@ namespace Selenium_C_Sharp_NUNIT
             checkbutton2.Click();
 
             Assert.That(checkmessage2.Text, Does.Contain(abc1) & Does.Contain(abc5), "'{0}' does not contain '{1}'", checkmessage2.Text, abc1, abc5);
-
-            if ((checkmessage2.Text.Contains(abc1)) && (checkmessage2.Text.Contains(abc5)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc5);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc1 + "\n" + abc5);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
         }
 
         [Test]
@@ -442,17 +348,6 @@ namespace Selenium_C_Sharp_NUNIT
             checkbutton2.Click();
 
             Assert.That(checkmessage2.Text, Does.Contain(abc2) & Does.Contain(abc3), "'{0}' does not contain '{1}'", checkmessage2.Text, abc2, abc3);
-
-            if ((checkmessage2.Text.Contains(abc2)) && (checkmessage2.Text.Contains(abc3)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc3);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc3);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
         }
 
         [Test]
@@ -479,17 +374,6 @@ namespace Selenium_C_Sharp_NUNIT
             checkbutton2.Click();
 
             Assert.That(checkmessage2.Text, Does.Contain(abc2) & Does.Contain(abc4), "'{0}' does not contain '{1}'", checkmessage2.Text, abc2, abc4);
-
-            if ((checkmessage2.Text.Contains(abc2)) && (checkmessage2.Text.Contains(abc4)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc4);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc4);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
         }
 
         [Test]
@@ -517,18 +401,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(checkmessage2.Text, Does.Contain(abc2) & Does.Contain(abc5), "'{0}' does not contain '{1}'", checkmessage2.Text, abc2, abc5);
 
-            if ((checkmessage2.Text.Contains(abc2)) && (checkmessage2.Text.Contains(abc5)))
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc5);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "\n" + abc2 + "\n" + abc5);
-                Console.WriteLine("The output shown: " + checkmessage2.Text);
-            }
-
-            //return from Radio Buttons Demo to Main Page
             driver.Navigate().Back();
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -546,9 +418,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Select Dropdown List
-
+            
             IWebElement InputForms4 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms4.SendKeys(Keys.Down);
@@ -564,17 +436,6 @@ namespace Selenium_C_Sharp_NUNIT
             one1.SelectByValue("Wednesday");
 
             Assert.That(checkmessage3.Text, Does.Contain(expm1), "'{0}' does not contain '{1}'", checkmessage3.Text, expm1);
-
-            if (checkmessage3.Text.Contains(expm1))
-            {
-                Console.WriteLine("The output expected: " + expm1);
-                Console.WriteLine("The output shown: " + checkmessage3.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + expm1);
-                Console.WriteLine("The output shown: " + checkmessage3.Text);
-            }
         }
 
         [Test]
@@ -618,17 +479,6 @@ namespace Selenium_C_Sharp_NUNIT
             FirstSelectedButton.Click();
 
             Assert.That(checkmsg1.Text, Does.Contain(state1), "'{0}' does not contain '{1}'", checkmsg1.Text, state1);
-
-            if (checkmsg1.Text.Contains(state1))
-            {
-                Console.WriteLine("The output expected: " + frstoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + frstoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
         }
 
         [Test]
@@ -669,17 +519,6 @@ namespace Selenium_C_Sharp_NUNIT
             GetAllSelectedButton.Click();
 
             Assert.That(checkmsg1.Text, Does.Contain(state1), "'{0}' does not contain '{1}'", checkmsg1.Text, state1);
-
-            if (checkmsg1.Text.Contains(state1))
-            {
-                Console.WriteLine("The output expected: " + optoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + optoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
         }
 
         [Test]
@@ -725,17 +564,6 @@ namespace Selenium_C_Sharp_NUNIT
             FirstSelectedButton.Click();
 
             Assert.That(checkmsg1.Text, Does.Contain(state2), "'{0}' does not contain '{1}'", checkmsg1.Text, state2);
-
-            if (checkmsg1.Text.Contains(state2))
-            {
-                Console.WriteLine("The output expected: " + frstoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + frstoutstate1);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
         }
 
         [Test]
@@ -776,19 +604,7 @@ namespace Selenium_C_Sharp_NUNIT
             GetAllSelectedButton.Click();
 
             Assert.That(checkmsg1.Text, Does.Contain(state2), "'{0}' does not contain '{1}'", checkmsg1.Text, state2);
-
-            if (checkmsg1.Text.Contains(state2))
-            {
-                Console.WriteLine("The output expected: " + optoutstate1 + "\n" + state2);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + optoutstate1 + "\n" + optoutstate2);
-                Console.WriteLine("The output shown: " + checkmsg1.Text);
-            }
-
-            //return from Select Dropdown List to Main Page
+            
             driver.Navigate().Back();
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -806,8 +622,7 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             System.Threading.Thread.Sleep(mysecs);
-            //Open Input Form Submit
-
+            
             IWebElement InputForms5 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms5.SendKeys(Keys.Down);
@@ -862,9 +677,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Ajax Form Submit
-
+            
             IWebElement InputForms6 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms6.SendKeys(Keys.Down);
@@ -885,17 +700,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement mysubmittext = driver.FindElement(By.Id("submit-control"));
 
             Assert.That(mysubmittext.Text, Does.Contain(expsubmittext), "'{0}' does not contain '{1}'", mysubmittext.Text, expsubmittext);
-
-            if (mysubmittext.Text.Contains(expsubmittext))
-            {
-                Console.WriteLine("The output expected: " + expsubmittext);
-                Console.WriteLine("The output shown: " + mysubmittext.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + expsubmittext);
-                Console.WriteLine("The output shown: " + mysubmittext.Text);
-            }
         }
     }
 
@@ -912,8 +716,7 @@ namespace Selenium_C_Sharp_NUNIT
         {
             myMethod();
             System.Threading.Thread.Sleep(mysecs);
-            //Open Ajax Form Submit
-
+            
             IWebElement InputForms7 = driver.FindElement(By.LinkText("Input Forms"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms7.SendKeys(Keys.Down);
@@ -991,9 +794,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Bootstrap Date Picker
-
+           
             IWebElement InputForms8 = driver.FindElement(By.LinkText("Date pickers"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms8.SendKeys(Keys.Down);
@@ -1038,9 +841,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open JQuery Date Picker
-
+            
             IWebElement InputForms9 = driver.FindElement(By.LinkText("Date pickers"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms9.SendKeys(Keys.Down);
@@ -1069,9 +872,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Table Pagination
-
+          
             IWebElement InputForms10 = driver.FindElement(By.LinkText("Table"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms10.SendKeys(Keys.Down);
@@ -1108,9 +911,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Table Data Search
-
+            
             IWebElement InputForms11 = driver.FindElement(By.LinkText("Table"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms11.SendKeys(Keys.Down);
@@ -1133,17 +936,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox1.Text, Does.Contain(mytest1), "'{0}' does not contain '{1}'", OutBox1.Text, mytest1);
 
-            if (OutBox1.Text.Contains(mytest1))
-            {
-                Console.WriteLine("The output expected: " + mytest1);
-                Console.WriteLine("The output shown: " + OutBox1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest1);
-                Console.WriteLine("The output shown: " + OutBox1.Text);
-            }
-
             InputBox1.Clear();
         }
 
@@ -1162,17 +954,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox2.Text, Does.Contain(mytest2), "'{0}' does not contain '{1}'", OutBox2.Text, mytest2);
 
-            if (OutBox2.Text.Contains(mytest2))
-            {
-                Console.WriteLine("The output expected: " + mytest2);
-                Console.WriteLine("The output shown: " + OutBox2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest2);
-                Console.WriteLine("The output shown: " + OutBox2.Text);
-            }
-
             InputBox1.Clear();
         }
 
@@ -1190,17 +971,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement OutBox3 = driver.FindElement(By.XPath("//td[contains(.,'completed')]"));
 
             Assert.That(OutBox3.Text, Does.Contain(mytest3), "'{0}' does not contain '{1}'", OutBox3.Text, mytest3);
-
-            if (OutBox3.Text.Contains(mytest3))
-            {
-                Console.WriteLine("The output expected: " + mytest3);
-                Console.WriteLine("The output shown: " + OutBox3.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest3);
-                Console.WriteLine("The output shown: " + OutBox3.Text);
-            }
 
             InputBox1.Clear();
             System.Threading.Thread.Sleep(mysecs);
@@ -1230,17 +1000,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox11.Text, Does.Contain(mytest4), "'{0}' does not contain '{1}'", OutBox11.Text, mytest4);
 
-            if (OutBox11.Text.Contains(mytest4))
-            {
-                Console.WriteLine("The output expected: " + mytest4);
-                Console.WriteLine("The output shown: " + OutBox11.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest4);
-                Console.WriteLine("The output shown: " + OutBox11.Text);
-            }
-
             InputBox11.Clear();
         }
 
@@ -1265,17 +1024,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox12.Text, Does.Contain(mytest5), "'{0}' does not contain '{1}'", OutBox12.Text, mytest5);
 
-            if (OutBox12.Text.Contains(mytest5))
-            {
-                Console.WriteLine("The output expected: " + mytest5);
-                Console.WriteLine("The output shown: " + OutBox12.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest5);
-                Console.WriteLine("The output shown: " + OutBox12.Text);
-            }
-
             InputBox12.Clear();
         }
 
@@ -1299,17 +1047,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement OutBox13 = driver.FindElement(By.XPath("//td[contains(.,'Byron')]"));
 
             Assert.That(OutBox13.Text, Does.Contain(mytest6), "'{0}' does not contain '{1}'", OutBox13.Text, mytest6);
-
-            if (OutBox13.Text.Contains(mytest6))
-            {
-                Console.WriteLine("The output expected: " + mytest6);
-                Console.WriteLine("The output shown: " + OutBox13.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest6);
-                Console.WriteLine("The output shown: " + OutBox13.Text);
-            }
 
             InputBox13.Clear();
         }
@@ -1336,17 +1073,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OutBox14.Text, Does.Contain(mytest7), "'{0}' does not contain '{1}'", OutBox14.Text, mytest7);
 
-            if (OutBox14.Text.Contains(mytest7))
-            {
-                Console.WriteLine("The output expected: " + mytest7);
-                Console.WriteLine("The output shown: " + OutBox14.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mytest7);
-                Console.WriteLine("The output shown: " + OutBox14.Text);
-            }
-
             InputBox14.Clear();
         }
     }
@@ -1363,9 +1089,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Table Filter
-
+            
             IWebElement InputForms12 = driver.FindElement(By.LinkText("Table"));
             InputForms12.SendKeys(Keys.Down);
             driver.FindElement(By.LinkText("Table Filter")).Click();
@@ -1440,9 +1166,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Table Sort & Search
-
+            
             IWebElement InputForms13 = driver.FindElement(By.LinkText("Table"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms13.SendKeys(Keys.Down);
@@ -1460,17 +1186,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement mymessagebox = driver.FindElement(By.XPath("//div[@class='dataTables_info']"));
 
             Assert.That(mymessagebox.Text, Does.Contain(mymessage1), "'{0}' does not contain '{1}'", mymessagebox.Text, mymessage1);
-
-            if (mymessagebox.Text.Contains(mymessage1))
-            {
-                Console.WriteLine("The output expected: " + mymessage1);
-                Console.WriteLine("The output shown: " + mymessagebox.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mymessage1);
-                Console.WriteLine("The output shown: " + mymessagebox.Text);
-            }
 
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -1515,17 +1230,6 @@ namespace Selenium_C_Sharp_NUNIT
             driver.FindElement(By.XPath("//select[contains(@name,'length')]")).SendKeys(Keys.Enter);
 
             Assert.That(mymessagebox.Text, Does.Contain(mymessage3), "'{0}' does not contain '{1}'", mymessagebox.Text, mymessage3);
-
-            if (mymessagebox.Text.Contains(mymessage3))
-            {
-                Console.WriteLine("The output expected: " + mymessage3);
-                Console.WriteLine("The output shown: " + mymessagebox.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + mymessage3);
-                Console.WriteLine("The output shown: " + mymessagebox.Text);
-            }
 
             //next
             System.Threading.Thread.Sleep(mysecs);
@@ -1631,7 +1335,7 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
-            //Open Table Data Download
+            
             System.Threading.Thread.Sleep(mysecs);
             IWebElement InputForms14 = driver.FindElement(By.LinkText("Table"));
             InputForms14.SendKeys(Keys.Down);
@@ -1652,9 +1356,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open JQuery Download Progress bars
-
+            
             IWebElement InputForms15 = driver.FindElement(By.LinkText("Progress Bars"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms15.SendKeys(Keys.Down);
@@ -1680,9 +1384,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Bootstrap Progress bar
-
+            
             IWebElement InputForms16 = driver.FindElement(By.LinkText("Progress Bars"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms16.SendKeys(Keys.Down);
@@ -1696,16 +1400,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(OneHundredPercnt.Text, Does.Contain("100%"), "'{0}' does not contain '{1}'", OneHundredPercnt.Text, "100%");
 
-            if (OneHundredPercnt.Text.Contains("100%"))
-            {
-                Console.WriteLine("The output expected: " + "100%");
-                Console.WriteLine("The output shown: " + OneHundredPercnt.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + "100%");
-                Console.WriteLine("The output shown: " + OneHundredPercnt.Text);
-            }
         }
     }
 
@@ -1721,9 +1415,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Drag & Drop Sliders
-
+            
             IWebElement InputForms17 = driver.FindElement(By.LinkText("Progress Bars"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms17.SendKeys(Keys.Down);
@@ -1804,9 +1498,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Bootstrap Alerts
-
+            
             IWebElement InputForms18 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms18.SendKeys(Keys.Down);
@@ -1826,17 +1520,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement alert1 = driver.FindElement(By.XPath("//div[contains(@class,'alert alert-success alert-autocloseable-success')]"));
 
             Assert.That(alert1.Text, Does.Contain(m1), "'{0}' does not contain '{1}'", alert1.Text, m1);
-
-            if (alert1.Text.Contains(m1))
-            {
-                Console.WriteLine("The output expected: " + m1);
-                Console.WriteLine("The output shown: " + alert1.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m1);
-                Console.WriteLine("The output shown: " + alert1.Text);
-            }
 
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -1859,17 +1542,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement alert2 = driver.FindElement(By.XPath("//div[contains(@class,'alert alert-success alert-normal-success')]"));
 
             Assert.That(alert2.Text, Does.Contain(m2), "'{0}' does not contain '{1}'", alert2.Text, m2);
-
-            if (alert2.Text.Contains(m2))
-            {
-                Console.WriteLine("The output expected: " + m2);
-                Console.WriteLine("The output shown: " + alert2.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m2);
-                Console.WriteLine("The output shown: " + alert2.Text);
-            }
 
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -1894,17 +1566,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert3.Text, Does.Contain(m3), "'{0}' does not contain '{1}'", alert3.Text, m3);
 
-            if (alert3.Text.Contains(m3))
-            {
-                Console.WriteLine("The output expected: " + m3);
-                Console.WriteLine("The output shown: " + alert3.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m3);
-                Console.WriteLine("The output shown: " + alert3.Text);
-            }
-
             System.Threading.Thread.Sleep(mysecs);
         }
 
@@ -1925,17 +1586,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement alert4 = driver.FindElement(By.XPath("//div[contains(@class,'alert alert-warning alert-normal-warning')]"));
 
             Assert.That(alert4.Text, Does.Contain(m4), "'{0}' does not contain '{1}'", alert4.Text, m4);
-
-            if (alert4.Text.Contains(m4))
-            {
-                Console.WriteLine("The output expected: " + m4);
-                Console.WriteLine("The output shown: " + alert4.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m4);
-                Console.WriteLine("The output shown: " + alert4.Text);
-            }
 
             System.Threading.Thread.Sleep(mysecs);
 
@@ -1961,17 +1611,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert5.Text, Does.Contain(m5), "'{0}' does not contain '{1}'", alert5.Text, m5);
 
-            if (alert5.Text.Contains(m5))
-            {
-                Console.WriteLine("The output expected: " + m5);
-                Console.WriteLine("The output shown: " + alert5.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m5);
-                Console.WriteLine("The output shown: " + alert5.Text);
-            }
-
             System.Threading.Thread.Sleep(mysecs);
         }
 
@@ -1993,17 +1632,6 @@ namespace Selenium_C_Sharp_NUNIT
             IWebElement alert6 = driver.FindElement(By.XPath("//div[contains(@class,'alert alert-danger alert-normal-danger')]"));
 
             Assert.That(alert6.Text, Does.Contain(m6), "'{0}' does not contain '{1}'", alert6.Text, m6);
-
-            if (alert6.Text.Contains(m6))
-            {
-                Console.WriteLine("The output expected: " + m6);
-                Console.WriteLine("The output shown: " + alert6.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m6);
-                Console.WriteLine("The output shown: " + alert6.Text);
-            }
 
             System.Threading.Thread.Sleep(mysecs);
         }
@@ -2031,17 +1659,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert7.Text, Does.Contain(m7), "'{0}' does not contain '{1}'", alert7.Text, m7);
 
-            if (alert7.Text.Contains(m7))
-            {
-                Console.WriteLine("The output expected: " + m7);
-                Console.WriteLine("The output shown: " + alert7.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m7);
-                Console.WriteLine("The output shown: " + alert7.Text);
-            }
-
             System.Threading.Thread.Sleep(mysecs);
         }
 
@@ -2064,17 +1681,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert8.Text, Does.Contain(m8), "'{0}' does not contain '{1}'", alert8.Text, m8);
 
-            if (alert8.Text.Contains(m8))
-            {
-                Console.WriteLine("The output expected: " + m8);
-                Console.WriteLine("The output shown: " + alert8.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m8);
-                Console.WriteLine("The output shown: " + alert8.Text);
-            }
-
             System.Threading.Thread.Sleep(mysecs);
 
             driver.FindElement(By.XPath("(//button[@type='button'][contains(.,'×')])[4]")).Click();
@@ -2095,9 +1701,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Bootstrap Modals
-
+            
             IWebElement InputForms19 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms19.SendKeys(Keys.Down);
@@ -2145,9 +1751,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Window Popup Modal
-
+            
             IWebElement InputForms20 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms20.SendKeys(Keys.Down);
@@ -2221,9 +1827,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Progress Bar Modal
-
+            
             IWebElement InputForms21 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms21.SendKeys(Keys.Down);
@@ -2251,7 +1857,7 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method1()
         {
             myMethod();
-            //Open Javascript Alerts
+            
             System.Threading.Thread.Sleep(mysecs);
             IWebElement InputForms22 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
@@ -2286,17 +1892,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert2cancel.Text, Does.Contain(m11), "'{0}' does not contain '{1}'", alert2cancel.Text, m11);
 
-            if (alert2cancel.Text.Contains(m11))
-            {
-                Console.WriteLine("The output expected: " + m11);
-                Console.WriteLine("The output shown: " + alert2cancel.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m11);
-                Console.WriteLine("The output shown: " + alert2cancel.Text);
-            }
-
             System.Threading.Thread.Sleep(mysecs);
         }
 
@@ -2316,16 +1911,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(alert2accept.Text, Does.Contain(m12), "'{0}' does not contain '{1}'", alert2accept.Text, m12);
 
-            if (alert2accept.Text.Contains(m12))
-            {
-                Console.WriteLine("The output expected: " + m12);
-                Console.WriteLine("The output shown: " + alert2accept.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m12);
-                Console.WriteLine("The output shown: " + alert2accept.Text);
-            }
         }
 
         [Test]
@@ -2357,16 +1942,6 @@ namespace Selenium_C_Sharp_NUNIT
 
             Assert.That(popuptext.Text, Does.Contain(m15), "'{0}' does not contain '{1}'", popuptext.Text, m15);
 
-            if (popuptext.Text.Contains(m15))
-            {
-                Console.WriteLine("The output expected: " + m15);
-                Console.WriteLine("The output shown: " + popuptext.Text);
-            }
-            else
-            {
-                Console.WriteLine("The output expected: " + m15);
-                Console.WriteLine("The output shown: " + popuptext.Text);
-            }
         }
     }
 
@@ -2383,9 +1958,9 @@ namespace Selenium_C_Sharp_NUNIT
 
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Javascript Alerts
-
+            
             IWebElement InputForms23 = driver.FindElement(By.LinkText("Alerts & Modals"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms23.SendKeys(Keys.Down);
@@ -2422,9 +1997,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Bootstrap List Box
-
+            
             IWebElement InputForms24 = driver.FindElement(By.LinkText("List Box"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms24.SendKeys(Keys.Down);
@@ -2537,9 +2112,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open JQuery List Box
-
+            
             IWebElement InputForms25 = driver.FindElement(By.LinkText("List Box"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms25.SendKeys(Keys.Down);
@@ -2628,9 +2203,9 @@ namespace Selenium_C_Sharp_NUNIT
         public static void method()
         {
             myMethod();
+            
             System.Threading.Thread.Sleep(mysecs);
-            //Open Data List Filter
-
+            
             IWebElement InputForms26 = driver.FindElement(By.LinkText("List Box"));
             System.Threading.Thread.Sleep(mysecs);
             InputForms26.SendKeys(Keys.Down);
